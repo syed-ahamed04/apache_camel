@@ -1,0 +1,12 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: routing-service
+
+camel:
+  springboot:
+    name: routing-service
+    xml-routes:
+      - classpath:/routing-route.xml

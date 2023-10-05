@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns="http://camel.apache.org/schema/spring">
+    <route id="routingRoute">
+        <from uri="direct:orderTransformation"/>
+        <log message="Routing order to Transformation service: ${body}"/>
+        <to uri="localhost:8081/routing/processOrder"/>
+        
+        <from uri="direct:paymentTransformation"/>
+        <log message="Routing payment to Transformation service: ${body}"/>
+        <to uri="direct:transformation"/>
+    </route>
+</routes>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns="http://camel.apache.org/schema/spring">
+    <route id="transformationRoute">
+        <from uri="direct:transformation"/>
+        <log message="Transforming JSON to XML in Transformation: ${body}"/>
+        
+        <!-- JSON to XML transformation logic -->
+        <setBody>
+            <simple>
+                <![CDATA[<order><id>${body.id}</id><type>${body.type}</type><discountPercentage>10%</discountPercentage></order>]]>
+            </simple>
+        </setBody>
+        
+        <log message="Transformed XML: ${body}"/>
+    </route>
+</routes>

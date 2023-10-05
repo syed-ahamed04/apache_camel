@@ -1,0 +1,12 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: transformation-service
+
+camel:
+  springboot:
+    name: transformation-service
+    xml-routes:
+      - classpath:/transformation-route.xml

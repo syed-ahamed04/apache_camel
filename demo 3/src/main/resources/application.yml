@@ -1,0 +1,12 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: adapter-service
+
+camel:
+  springboot:
+    name: adapter-service
+    xml-routes:
+      - classpath:/adapter-route.xml
